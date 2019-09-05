@@ -5,4 +5,6 @@ const server = express();
 server.use(express.json());
 server.use('/api/posts', postsRouter);
 
-server.listen(8000, () => console.log('sever running on port 8000'));
+const port = process.env.PORT || 8000;
+
+server.listen(port, () => console.log(`sever running on ${port}`));
